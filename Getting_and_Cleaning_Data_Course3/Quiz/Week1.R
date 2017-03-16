@@ -61,3 +61,14 @@ quiz5DataURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.
 
 download.file(quiz5DataURL,"./Week1_Data/quiz5.csv")
 DT <- fread("./Week1_Data/quiz5.csv",sep = ",",stringsAsFactors = FALSE,header = TRUE)
+system.time(tapply(DT$pwgtp15,DT$SEX,mean))
+
+system.time(DT[,mean(pwgtp15),by=SEX])
+
+system.time({mean(DT[DT$SEX==1,]$pwgtp15); mean(DT[DT$SEX==2,]$pwgtp15)})
+
+system.time(mean(DT$pwgtp15,by=DT$SEX))
+
+system.time({rowMeans(DT)[DT$SEX==1]; rowMeans(DT)[DT$SEX==2]})
+
+system.time(sapply(split(DT$pwgtp15,DT$SEX),mean))
