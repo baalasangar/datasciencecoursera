@@ -1,3 +1,5 @@
+Data Set :
+
 ================================================================================================
 
    subject 'ID of the person who involved in experiment.value range from 1-30'
@@ -149,3 +151,11 @@
        Skewness:   0.448
        Kurtosis:  -0.616
 
+Transformations
+
+Main transformations applied in the R script are:
+
+1. Merge datasets and give appropriate names
+2. Extract only the measurements on the mean and standard deviation for each measurement
+3. Combine subjects, labels and observations
+4. Write to a file
